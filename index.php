@@ -16,7 +16,8 @@ try {
   echo "Connected successfully";
 
   $stmt = $conn->prepare("SELECT * FROM tableone;");
-  $result = $stmt->execute();
+  $stmt->execute();
+  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
   print_r($result);
 
 } catch(PDOException $e) {
