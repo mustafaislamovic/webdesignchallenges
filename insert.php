@@ -15,7 +15,7 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   echo "Connected successfully";
 
-  $stmt = $conn->prepare("INSERT INTO tableone(description, created) VALUES("maca", "2022-03-14 12:00:00")");
+  $stmt = $conn->prepare("INSERT INTO tableone(description, created) VALUES('maca', '2022-03-14 12:00:00')");
   $result = $stmt->execute();
   print_r($result);
 
