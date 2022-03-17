@@ -23,7 +23,14 @@ class projectDao{
   // METHOD USED TO ADD PROJECT TO THE DATABASE
   public function add($description,$created){
     $stmt = $this->conn->prepare("INSERT INTO tableone(description,created) VALUES ('$description', '$created')");
-    $result = $stmt->execute();
+    $stmt->execute();
+
+  }
+
+  // METHOD USED TO DELETE PROJECT RECORDS
+  public function delete($id){
+    $stmt = $this->conn->prepare("DELETE FROM tableone WHERE id=$id)");
+    $stmt->execute();
 
   }
 
