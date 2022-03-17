@@ -36,7 +36,7 @@ class projectDao{
 
   // UPDATE PROJECT RECORD
   public function update($id,$description,$created){
-    $stmt = $this->conn->prepare("UPDATE tableone SET description=$description, created=$created WHERE id=$id");
+    $stmt = $this->conn->prepare("UPDATE tableone SET description='$description', created='$created' WHERE id=$id");
     $stmt->execute();
 
   }
