@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 echo "Hello ";
-require_once("rest/DAO/projectDAO.class.php");
+require_once("rest(backend)/DAO/projectDAO.class.php");
 
 $dao = new projectDao();
 $results = $dao->get_all();
