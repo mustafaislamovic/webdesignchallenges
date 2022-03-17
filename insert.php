@@ -7,9 +7,10 @@ error_reporting(E_ALL);
 require_once("rest(backend)/DAO/projectDAO.class.php");
 
 $description = $_REQUEST['description'];
+$created = $_REQUEST['created'];
 
 $dao = new projectDao();
-$results = $dao->add($description);
+$results = $dao->add($description, $created);
 print_r($results);
 
 ?>
