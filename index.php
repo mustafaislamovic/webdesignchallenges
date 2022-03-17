@@ -9,4 +9,4 @@ require_once("rest(backend)/DAO/projectDAO.class.php");
 $dao = new projectDao();
 $results = $dao->get_all();
 print_r($results);
- ?>
+?>
