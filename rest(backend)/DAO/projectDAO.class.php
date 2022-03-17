@@ -29,7 +29,7 @@ class projectDao{
 
   // METHOD USED TO DELETE PROJECT RECORDS
   public function delete($id){
-    $stmt = $this->conn->prepare("DELETE FROM tableone WHERE id=$id"));
+    $stmt = $this->conn->prepare("DELETE FROM tableone WHERE id=$id");
     $stmt->execute();
 
   }
