@@ -22,6 +22,8 @@ class projectDao{
   }
   // METHOD USED TO ADD PROJECT TO THE DATABASE
   public function add($description){
+    $stmt = $this->conn->prepare("INSERT INTO tableone(description,created) VALUES ('$description', '2022-03-14 12:00:00')");
+    $result = $stmt->execute();
 
   }
 
