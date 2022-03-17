@@ -20,7 +20,7 @@ try {
 
   $stmt = $conn->prepare("SELECT * FROM tableone;");
   $stmt->execute();
-  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
   print_r($result);
 
 } catch(PDOException $e) {
