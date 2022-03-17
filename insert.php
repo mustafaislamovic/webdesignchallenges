@@ -9,6 +9,8 @@ $username = "webdesignchallenges";
 $password = "webdesignchallenges";
 $schema = "webdesignchallenges";
 
+
+
 $description = $_REQUEST['description'];
 
 try {
