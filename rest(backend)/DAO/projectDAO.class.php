@@ -15,7 +15,7 @@ class projectDao{
   }
   // METHOD USED TO REAL ALL PROJECT OBJECTS FROM DB
   public function get_all(){
-    $stmt = this->conn->prepare("SELECT * FROM tableone;");
+    $stmt = $this->conn->prepare("SELECT * FROM tableone;");
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
