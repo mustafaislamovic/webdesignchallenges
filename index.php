@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 echo "Hello ";
 require_once("rest(backend)/DAO/projectDAO.class.php");
 
-$dao = new projectDao();
+$dao = new projectDAO();
 $results = $dao->get_all();
 print_r($results);
  ?>
