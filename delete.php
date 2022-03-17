@@ -7,7 +7,6 @@ require_once("rest(backend)/DAO/projectDAO.class.php");
 
 $id = $_REQUEST['id'];
 
-
 $dao = new projectDao();
 $dao->delete($id);
 
