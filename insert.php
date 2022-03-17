@@ -9,6 +9,10 @@ $username = "webdesignchallenges";
 $password = "webdesignchallenges";
 $schema = "webdesignchallenges";
 
+print_r($_GET);
+
+die;
+
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$schema", $username, $password);
   // set the PDO error mode to exception
