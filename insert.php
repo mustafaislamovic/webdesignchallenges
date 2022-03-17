@@ -9,8 +9,7 @@ $username = "webdesignchallenges";
 $password = "webdesignchallenges";
 $schema = "webdesignchallenges";
 
-print_r($_GET);
-
+print_r($_REQUEST);
 die;
 
 try {
