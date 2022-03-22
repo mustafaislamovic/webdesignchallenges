@@ -13,7 +13,7 @@ Flight::route('/mustafa', function (){
   echo "Hello there Mustafa";
 });
 
-Flight::route('/maca/@name', function (){
+Flight::route('/maca/@name', function ($name){
   echo "Hello there Maco". $name;
 });
 
