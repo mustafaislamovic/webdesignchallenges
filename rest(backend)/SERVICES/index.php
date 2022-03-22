@@ -10,7 +10,7 @@ require_once '../../vendor/autoload.php';
 //list all things
 Flight::route('/tableone', function (){
   $dao = new projectDao();
-  $webdesignchallenges = $dao->get_all();
+  $tableone = $dao->get_all();
   print_r($tableone)
 });
 //list individual things
