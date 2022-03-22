@@ -8,7 +8,7 @@ require_once '../../vendor/autoload.php';
 // Crud operations for project entity
 
 //list all things
-Flight::route('/tableone', function (){
+Flight::route('/tableone', function(){
   $dao = new projectDao();
   $tableone = $dao->get_all();
   print_r($tableone)
