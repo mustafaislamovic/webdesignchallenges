@@ -5,34 +5,38 @@ error_reporting(E_ALL);
 
 require_once 'DAO/projectDao.class.php';
 require_once '../vendor/autoload.php';
-// Crud operations for project entity
 
-//list all things
-Flight::route('/tableone', function(){
-  $dao = new projectDao();
-  $tableone = $dao->get_all();
-  print_r($tableone)
-});
-//list individual things
+Flight::register('projectDao', 'projectDao');
 
-//add thing
+// CRUD operations for todos entity
 
-//update thing
-
-//delete thing
-
-Flight::route('/', function (){
-  echo "Hello there";
+// list all things
+Flight::route('GET /tableone', function(){
+  Flight::json(Flight::projectDao()->get_all());
 });
 
-Flight::route('/mustafa', function (){
-  echo "Hello there Mustafa";
+// list individual thing
+Flight::route('GET /tableone/@id', function($id){
+  Flight::json(Flight::projectDao()->get_by_id($id));
 });
 
-Flight::route('/maca/@name', function ($name){
-  echo "Hello there Maco". $name;
+//  add thing
+Flight::route('POST /tableone', function(){
+  Flight::json(Flight::projectDao()->add(Flight::request()->data->getData()));
+});
+
+// update thing
+Flight::route('PUT /tableone/@id', function($id){
+  $data = Flight::request()->data->getData();
+  $data['id'] = $id;
+  Flight::json(Flight::projectDao()->update($data));
+});
+
+// delete thing
+Flight::route('DELETE /tableone/@id', function($id){
+  Flight::projectDao()->delete($id);
+  Flight::json(["message" => "deleted"]);
 });
 
 Flight::start();
-
- ?>
+?>
