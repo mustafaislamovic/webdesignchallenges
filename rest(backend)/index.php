@@ -8,7 +8,7 @@ require_once '../vendor/autoload.php';
 
 Flight::register('projectDao', 'projectDao');
 
-// CRUD operations for todos entity
+// CRUD operations FOR DESIGN PROJECT
 
 // list all things
 Flight::route('GET /tableone', function(){
