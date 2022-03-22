@@ -9,6 +9,14 @@ Flight::route('/', function (){
   echo "Hello there";
 });
 
+Flight::route('/mustafa', function (){
+  echo "Hello there Mustafa";
+});
+
+Flight::route('/maca', function (){
+  echo "Hello there Maco";
+});
+
 Flight::start();
 
  ?>
