@@ -38,28 +38,11 @@
     <main>
       <div class="container marketing" style="margin-top:100px;">
       <div class="row">
-
         <div id = "tableone-list" class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-
-        <div class="col-lg-4">
-          <h2></h2>
-          <p></p>
-          <p><a class="btn btn-secondary" href="#">View details</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+          <span>Loading ...</span>
+      </div>
     </div>
-
-
+  </div>
     <main>
     </main>
 </body>
@@ -76,10 +59,7 @@
         <h2>`+ data[i].created +`</h2>
         <p>`+ data[i].description +`</p>
         <p><a class="btn btn-secondary" href="#">View details</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-  </div>
-      `
+  </div>`
     }
     $("#tableone-list").html(html);
     console.log(data);
