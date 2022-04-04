@@ -5,7 +5,7 @@
     <title>Web design challenges</title>
   </head>
   <body>
-    <table border="1">
+    <table class="tableone" id="tableoneId" border="1">
   <tr>
     <th>Company</th>
     <th>Contact</th>
@@ -22,7 +22,12 @@
     <td>Mexico</td>
   </tr>
 </table>
-
-  </body>
+</body>
   <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+  $.get( "rest(backend)/tableone", function( data ) {
+    console.log(data);
+    alert( "Load was performed." );
+  });
+  </script>
 </html>
