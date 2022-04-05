@@ -55,29 +55,62 @@
 
   <script>
   // AJAX GET REQUEST FROM API
-  $.get( "rest(backend)/tableone", function( data ) {
-    $("#tableone-list").html("");
-    var html = "";
-    for(let i = 0; i< data.length; i++){
-      html += `
-      <div class="col-lg-4">
-        <h2>`+ data[i].created +`</h2>
-        <p>`+ data[i].description +`</p>
-        <p><button type="button" class="btn btn-primary" onclick="showModal(`+data[i].id+`)">
-              Launch demo modal
-        </button>
-  </div>`;
-    }
-    $("#tableone-list").html(html);
-    console.log(data);
-    });
-    function showModal(id){
+  getThings();
+
+  function getThings(){
+    $.get( "rest(backend)/tableone", function( data ) {
+      $("#tableone-list").html("");
+      var html = "";
+      for(let i = 0; i< data.length; i++){
+        html += `
+        <div class="col-lg-4">
+          <h2>`+ data[i].created +`</h2>
+          <p>`+ data[i].description +`</p>
+          <p><button type="button" class="btn btn-primary btn-click" onclick="showModal(`+data[i].id+`)">
+                Launch demo modal
+          </button>
+    </div>`;
+      }
+      $("#tableone-list").html(html);
+      console.log(data);
+      });
+
+  }
+
+  function showModal(id){
+      $('.btn-click').attr('disabled', true);
       $.get('rest(backend)/tableone/'+id, function(data){
       console.log(data);
       //$("#exampleModal .modal-body").html(id);
       $("#description").val(data.description);
+      $("#id").val(data.id);
+      $("#created").val(data.created);
       $("#exampleModal").modal("show");
+      $('.btn-click').attr('disabled', false);
     })
+  }
+
+  function saveChange(){
+    $('.btn-save').attr('disabled', true)
+    var change = {};
+    //change.id=$('#id').val();
+    change.description=$('#description').val();
+    change.created=$('#created').val();
+
+    $.ajax({
+      url: 'rest(backend)/tableone/' + $('#id').val(),
+      type: 'PUT',
+      data: JSON.stringify(change),
+      contentType: "application/json",
+      dataType: "json",
+      success: function(result) {
+          $("#exampleModal").modal("hide");
+          $('.btn-save').attr('disabled', false);
+          getThings();
+      }
+  });
+
+    console.log(change)
   }
 
 
@@ -91,11 +124,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+          <input id="id" type="hidden"/>
           <input id="description" type="text"/>
+          <input id="created" type="hidden"/>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary btn-save" onclick="saveChange()">Save changes</button>
         </div>
       </div>
     </div>
