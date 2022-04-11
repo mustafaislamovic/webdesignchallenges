@@ -5,12 +5,23 @@
     <title>Web design challenges</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <style>
+    body {
+      background-image: url('https://images.hdqwalls.com/download/purple-abstract-4k-o5-1920x1080.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    </style>
+
+
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Carousel</a>
+          <a href="https://imgbb.com/"><img src="https://i.ibb.co/3vYVL11/Untitled-1.png" alt="Untitled-1" width="30" height="30" border="0"></a>
+          <a class="navbar-brand" href="#">w e b k n a c k</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -27,27 +38,30 @@
               </li>
             </ul>
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <button class="btn btn-light" type="submit">msailc</button>
             </form>
           </div>
         </div>
       </nav>
     </header>
+    <main>
+      <div class="container marketing text-center" style="margin-top:100px;">
+      <h1 class="mb-1">T H I S  W E E K</h1>
+      <h3 class="mb-5"><em>This week topics</em></h3><a class="btn btn-light btn-sm js-scroll-trigger" role="button" href="#about">Suggest your own topic</a>
+      <div class="overlay"></div>
+    </div>
+    </main>
 
     <main>
-      <div class="container marketing" style="margin-top:100px;">
+      <div class="container marketing text-center" style="margin-top:70px;">
         <div id = "tableone-list" class="row">
           <div class="spinner-border" role="status">
             <span class="sr-only"></span>
           </div>
       </div>
     </div>
-
-
-
-
     </main>
+
 </body>
 
   <script src="js/jquery-3.6.0.min.js"></script>
@@ -63,13 +77,15 @@
       var html = "";
       for(let i = 0; i< data.length; i++){
         html += `
-        <div class="col-lg-4">
-          <h2>`+ data[i].created +`</h2>
-          <p>`+ data[i].description +`</p>
-          <p><button type="button" class="btn btn-primary btn-click" onclick="showModal(`+data[i].id+`)">
-                Launch demo modal
-          </button>
-    </div>`;
+        <div class="card" style="width: 18rem;">
+  <img src="https://i.ibb.co/JBp7Xrk/download.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">`+ data[i].title +`</h5>
+    <p class="card-text">`+ data[i].description +`</p>
+    <p class="card-text">`+ "Submitted : " + data[i].created +`</p>
+    <a href="#" class="btn btn-dark" onclick="showModal(`+data[i].id+`)" >Open magic</a>
+  </div>
+</div>`;
       }
       $("#tableone-list").html(html);
       console.log(data);

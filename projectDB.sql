@@ -1,2 +1,0 @@
-
-`tableone`SELECT * FROM tableone
