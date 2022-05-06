@@ -68,7 +68,7 @@
 
   <div class="text-center font-monospace p-4 p-lg-5">
     <p class="fw-bold text-light mb-2">Proud to introduce</p>
-    <h1 class="fw-bold text-light mb-2">Our top-rated designs</h1>
+    <h1 class="fw-bold text-light mb-2">Our top-rated users</h1>
   </div>
 
   <div class="text-center">
@@ -142,84 +142,10 @@
 </div>
 
 <script>
-  $('#addDesignForm').validate({
-    submitHandler: function(form) {
-      var design = Object.formEntries((new FormData(form)).entries())
-      $.ajax({
-        url: 'rest(backend)/tableone/' + $('#id').val(),
-        type: 'POST',
-        data: JSON.stringify(change),
-        contentType: "application/json",
-        dataType: "json",
-        success: function(result) {
-          $("#exampleModal").modal("hide");
-          getThings();
-          console.log(result);
-        }
-      });
-    }
-  });
-
-  getThings();
-
-  function getThings() {
-    $.get("rest(backend)/tableone", function(data) {
-      $("#tableone-list").html("");
-      var html = "";
-      for (let i = 0; i < data.length; i++) {
-        html += `
-          <div class="col">
-              <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 120px;" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" />
-                  <div class="card-body p-4">
-                      <p class="text-primary card-text mb-0">` + data[i].title + `</p>
-                      <h4 class="card-title">` + data[i].description + `</h4>
-                      <p class="card-text">` + "Submitted : " + data[i].created + `</p>
-                      <a href="#" class="btn btn-dark" onclick="showModal(` + data[i].id + `)" >Open magic</a>
-                  </div>
-              </div>
-          </div>
-          `;
-      }
-      $("#tableone-list").html(html);
-      console.log(data);
-    });
-
-  }
-
-  function showModal(id) {
-    $('.btn-click').attr('disabled', true);
-    $.get('rest(backend)/tableone/' + id, function(data) {
-      console.log(data);
-      $("#description").val(data.description);
-      $("#id").val(data.id);
-      $("#created").val(data.created);
-      $("#exampleModal").modal("show");
-      $('.btn-click').attr('disabled', false);
-    })
-  }
-
-  function saveChange() {
-    $('.btn-save').attr('disabled', true)
-    var change = {};
-
-    change.description = $('#description').val();
-    change.created = $('#created').val();
-
-    $.ajax({
-      url: 'rest(backend)/tableone/' + $('#id').val(),
-      type: 'PUT',
-      data: JSON.stringify(change),
-      contentType: "application/json",
-      dataType: "json",
-      success: function(result) {
-        $("#exampleModal").modal("hide");
-        $('.btn-save').attr('disabled', false);
-        getThings();
-        console.log(result);
-      }
-    });
-  }
+  PrimaryService.init();
 </script>
+
+
 
 
 </html>
