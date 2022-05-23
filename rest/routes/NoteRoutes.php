@@ -19,7 +19,7 @@ Flight::route('GET /notes/@id', function($id){
 /**
 * List invidiual by id
 */
-Flight::route('GET /notes/@id/todos', function($id){
+Flight::route('GET /notes/@id', function($id){
   Flight::json(Flight::designService()->get_designs_by_note_id($id));
 });
 
