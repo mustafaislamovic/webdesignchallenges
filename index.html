@@ -3,71 +3,96 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Design Apppp</title>
+  <title>Web design challenges</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+
   <style>
-    .error{
-      color:red;
+    body {
+      background-image: url('https://cdn.discordapp.com/attachments/742391817387114557/965359007260876850/WallpaperDog-17248514.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
     }
   </style>
 </head>
 
 <body>
+
   <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Design Application</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Linkk</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
+    <nav class="navbar navbar-dark navbar-expand-sm bg-dark py-3">
+      <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-sm d-flex justify-content-center align-items-center me-2 bs-icon"><img
+              src="https://cdn.discordapp.com/attachments/742391817387114557/963575647274401832/mule.png" width="25" /></span><span>webknack</span></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-6"><span
+            class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div id="navcol-6" class="collapse navbar-collapse flex-grow-0 order-md-first">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"></li>
+            <li class="nav-item"></li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          <div class="d-md-none my-2"><button class="btn btn-light me-2" type="button">Button</button><button class="btn btn-primary" type="button">Button</button></div>
         </div>
+        <div class="d-none d-md-block"></div>
       </div>
     </nav>
   </header>
+  <header>
 
-  <main>
-    <div class="container marketing" style="margin-top:100px;">
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div>
-          <button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#addNoteModal">New Note</button>
+    <div class="container font-monospace d-flex flex-column align-items-center py-4 py-xl-5">
+      <div class="row gy-3 gx-3 w-100" style="max-width: 800px;">
+        <div class="col-12">
+          <div class="card"><img class="card-img w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" />
+            <div class="card-img-overlay font-monospace text-center text-dark d-flex flex-column justify-content-center align-items-center p-4">
+              <h4>Title</h4>
+              <p>Volutpat habitasse risus posuere, commodo fusce donec. Turpis donec tristique.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card"><img class="card-img w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" />
+            <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4">
+              <h4>Title</h4>
+              <p>Volutpat habitasse risus posuere, commodo fusce donec. Turpis donec tristique.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card"><img class="card-img w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" />
+            <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4">
+              <h4>Title</h4>
+              <p>Volutpat habitasse risus posuere, commodo fusce donec. Turpis donec tristique.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </header>
 
-      <div id="note-list" class="row">
+  <div class="text-center font-monospace p-4 p-lg-5">
+    <p class="fw-bold text-light mb-2">Proud to introduce</p>
+    <h1 class="fw-bold text-light mb-2">Our top-rated designs</h1>
+  </div>
+
+  <div class="text-center">
+    <div>
+      <button type="button" class="font-monospace p-lg-2" data-bs-toggle="modal" data-bs-target="#addDesignModal">Submit your own!</button>
+    </div>
+  </div>
+
+  <main>
+    <div class="container marketing text-center" style="margin-top:70px;">
+      <div id="tableone-list" class="row">
         <div class="spinner-border" role="status">
           <span class="sr-only"></span>
         </div>
-      </div><!-- /.row -->
+      </div>
     </div>
-
   </main>
 </body>
+
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/jquery.validate.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<script src="js/note-service.js"></script>
-<script src="js/design-service.js"></script>
 
-<!-- Modal -->
+<!-- Design Modals -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -82,38 +107,25 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary save-design-button" onclick="DesignService.update()">Save changes</button>
+        <button type="button" class="btn btn-primary btn-save" onclick="saveChange()">Save changes</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Add Modal -->
-<div class="modal fade" id="addNoteModal" tabindex="-1" aria-hidden="true">
+<!-- Submit design Modal -->
+<div class="modal fade" id="addDesignModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form id="addNoteForm">
+      <form id="addDesignForm">
         <div class="modal-header">
-          <h5 class="modal-title">Note</h5>
+          <h5 class="modal-title">Design</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="form-group">
-              <label>Name</label>
-              <input name="name" type="text" class="form-control required" placeholder="Enter name">
-            </div>
-            <div class="form-group">
               <label>Description</label>
               <input name="description" type="text" class="form-control required" placeholder="Enter description">
-            </div>
-            <div class="form-group">
-              <label>Color</label>
-              <input name="color" value="white" type="hidden" class="form-control required" placeholder="Enter color">
-              <div class="form-control btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn" style="background-color:red; color:red;" onclick="NoteService.choose_color('red');">X</button>
-                <button type="button" class="btn" style="background-color:yellow; color: yellow;" onclick="NoteService.choose_color('yellow');">X</button>
-                <button type="button" class="btn" style="background-color:blue; color:blue;" onclick="NoteService.choose_color('blue');">X</button>
-              </div>
             </div>
             <div class="form-group">
               <label>Created</label>
@@ -129,54 +141,77 @@
   </div>
 </div>
 
-
-<div class="modal fade" id="designModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Designs</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-
-            <div id="notes-designs" class="list-group">
-              <div class="list-group-item">
-                <button class="btn btn-danger btn-sm float-end">delete</button>
-                <p class="list-group-item-text">kkkkkk</p>
-              </div>
-              <div class="list-group-item">
-                <button class="btn btn-danger btn-sm float-end">delete</button>
-                <p class="list-group-item-text">kkkkkk</p>
-              </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-          <form id="add-design-form" class="form">
-            <input name="note_id" type="hidden" />
-            <div class="row" style="padding: 20px;">
-              <div class="col-sm-4">
-                <input name="description" type="text" class="form-control required" placeholder="Design">
-              </div>
-              <div class="col-sm-4">
-                <input name="created" type="date" class="form-control required" placeholder="Created">
-              </div>
-              <div class="col-sm-4">
-                <button type="submit" class="btn btn-primary mb-2">Add</button>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="modal-footer"> </div>
-    </div>
-  </div>
-</div>
-
 <script>
-  NoteService.init();
+
+  $('#addDesignForm').validate({
+    submitHandler: function(form) {
+      var design = Object.formEntries((new FormData(form)).entries())
+
+
+    }
+  });
+
+  getThings();
+
+  function getThings() {
+    $.get("rest(backend)/tableone", function(data) {
+      $("#tableone-list").html("");
+      var html = "";
+      for (let i = 0; i < data.length; i++) {
+        html += `
+          <div class="col">
+              <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 120px;" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" />
+                  <div class="card-body p-4">
+                      <p class="text-primary card-text mb-0">` + data[i].title + `</p>
+                      <h4 class="card-title">` + data[i].description + `</h4>
+                      <p class="card-text">` + "Submitted : " + data[i].created + `</p>
+                      <a href="#" class="btn btn-dark" onclick="showModal(` + data[i].id + `)" >Open magic</a>
+                  </div>
+              </div>
+          </div>
+          `;
+      }
+      $("#tableone-list").html(html);
+      console.log(data);
+    });
+
+  }
+
+  function showModal(id) {
+    $('.btn-click').attr('disabled', true);
+    $.get('rest(backend)/tableone/' + id, function(data) {
+      console.log(data);
+      $("#description").val(data.description);
+      $("#id").val(data.id);
+      $("#created").val(data.created);
+      $("#exampleModal").modal("show");
+      $('.btn-click').attr('disabled', false);
+    })
+  }
+
+  function saveChange() {
+    $('.btn-save').attr('disabled', true)
+    var change = {};
+
+    change.description = $('#description').val();
+    change.created = $('#created').val();
+
+    $.ajax({
+      url: 'rest(backend)/tableone/' + $('#id').val(),
+      type: 'PUT',
+      data: JSON.stringify(change),
+      contentType: "application/json",
+      dataType: "json",
+      success: function(result) {
+        $("#exampleModal").modal("hide");
+        $('.btn-save').attr('disabled', false);
+        getThings();
+        console.log(result);
+      }
+    });
+  }
+
 </script>
+
 
 </html>
