@@ -7,36 +7,68 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
   <style>
-    .error{
-      color:red;
+    .error {
+      color: red;
     }
   </style>
 </head>
 
 <style>
   body {
-    background-image: url('https://i0.wp.com/mightyrasing.com/wp-content/uploads/2017/02/dark-grey-background-1600-1050-plain.jpg?fit=1200%2C788&w=640');
+    background-image: url('https://media.discordapp.net/attachments/742391817387114557/965358610194522232/WallpaperDog-17248509.jpg');
   }
-  </style>
+</style>
 
 <body>
   <header>
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-          webknack
-        </a>
+    <nav class="navbar navbar-dark navbar-expand-sm bg-dark py-3">
+      <div class="container"><a class="navbar-brand font-monospace d-flex align-items-center" href="#"><span class="bs-icon-sm d-flex justify-content-center align-items-center me-2 bs-icon"><img
+              src="https://cdn.discordapp.com/attachments/742391817387114557/963575647274401832/mule.png" width="25" /></span><span>
+                webknack
+              </span></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-6"><span
+            class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div id="navcol-6" class="collapse navbar-collapse flex-grow-0 order-md-first">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"></li>
+            <li class="nav-item"></li>
+          </ul>
+          <div class="d-md-none my-2"><button class="btn btn-light me-2" type="button">Button</button><button class="btn btn-primary" type="button">Button</button></div>
+        </div>
+        <div class="d-none d-md-block"></div>
       </div>
     </nav>
   </header>
 
+
+  <!-- IMAGE CARDS MAIN PAGE -->
+  <header>
+  <div class="container font-monospace d-flex flex-column align-items-center py-4 ">
+    <div class="row gy-3 gx-3 w-100" style="max-width: 800px;">
+      
+        <div class="card"><img class="card-img w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" />
+          <div class="card-img-overlay font-monospace text-center text-dark d-flex flex-column justify-content-center align-items-center p-4">
+            <h4>Title</h4>
+            <p>Volutpat habitasse risus posuere, commodo fusce donec. Turpis donec tristique.</p>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</header>
+<!-- IMAGE CARDS MAIN PAGE END -->
+
+<div class="text-center font-monospace p-2 ">
+  <p class="fw-bold text-light mb-2">Proud to introduce</p>
+  <h1 class="fw-bold text-light mb-2">Our top-rated designs</h1>
+</div>
+
+
   <main>
     <div class="container marketing" style="margin-top:100px;">
       <!-- Three columns of text below the carousel -->
-      <div class="row">
+      <div class="text-center">
         <div>
-          <button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#addNoteModal">New Note</button>
+          <button class="btn btn-light align-items-center font-monospace btn-lg" data-bs-toggle="modal" data-bs-target="#addNoteModal">Submit your own!</button>
         </div>
       </div>
 
@@ -71,7 +103,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary save-design-button" onclick="DesignService.update()">Save changes</button>
+        <button type="button" class="btn btn-primary save-design-button" onclick="DesignService.update()">Save
+          changes</button>
       </div>
     </div>
   </div>
@@ -87,18 +120,18 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <div class="form-group">
-              <label>Name</label>
-              <input name="name" type="text" class="form-control required" placeholder="Enter name">
-            </div>
-            <div class="form-group">
-              <label>Description</label>
-              <input name="description" type="text" class="form-control required" placeholder="Enter description">
-            </div>
-            <div class="form-group">
-              <label>Created</label>
-              <input name="created" type="date" class="form-control required" placeholder="Created date">
-            </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input name="name" type="text" class="form-control required" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input name="description" type="text" class="form-control required" placeholder="Enter description">
+          </div>
+          <div class="form-group">
+            <label>Created</label>
+            <input name="created" type="date" class="form-control required" placeholder="Created date">
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -113,44 +146,44 @@
 <div class="modal fade" id="designModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Designs</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-header">
+        <h5 class="modal-title">Designs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+        <div id="notes-designs" class="list-group">
+          <div class="list-group-item">
+            <button class="btn btn-danger btn-sm float-end">delete</button>
+            <p class="list-group-item-text">kkkkkk</p>
+          </div>
+          <div class="list-group-item">
+            <button class="btn btn-danger btn-sm float-end">delete</button>
+            <p class="list-group-item-text">kkkkkk</p>
+          </div>
         </div>
-        <div class="modal-body">
 
+      </div>
 
-            <div id="notes-designs" class="list-group">
-              <div class="list-group-item">
-                <button class="btn btn-danger btn-sm float-end">delete</button>
-                <p class="list-group-item-text">kkkkkk</p>
-              </div>
-              <div class="list-group-item">
-                <button class="btn btn-danger btn-sm float-end">delete</button>
-                <p class="list-group-item-text">kkkkkk</p>
-              </div>
+      <div class="row">
+        <form id="add-design-form" class="form">
+          <input name="note_id" type="hidden" />
+          <div class="row" style="padding: 20px;">
+            <div class="col-sm-4">
+              <input name="description" type="text" class="form-control required" placeholder="Design">
             </div>
-
-        </div>
-
-        <div class="row">
-          <form id="add-design-form" class="form">
-            <input name="note_id" type="hidden" />
-            <div class="row" style="padding: 20px;">
-              <div class="col-sm-4">
-                <input name="description" type="text" class="form-control required" placeholder="Design">
-              </div>
-              <div class="col-sm-4">
-                <input name="created" type="date" class="form-control required" placeholder="Created">
-              </div>
-              <div class="col-sm-4">
-                <button type="submit" class="btn btn-primary mb-2">Add</button>
-              </div>
+            <div class="col-sm-4">
+              <input name="created" type="date" class="form-control required" placeholder="Created">
             </div>
-          </form>
-        </div>
+            <div class="col-sm-4">
+              <button type="submit" class="btn btn-primary mb-2">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
 
-        <div class="modal-footer"> </div>
+      <div class="modal-footer"> </div>
     </div>
   </div>
 </div>
