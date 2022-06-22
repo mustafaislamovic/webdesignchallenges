@@ -17,8 +17,8 @@ var NoteService = {
           html += `
           <div class="col">
             <div class="card" style="background-color:`+data[i].color+`">
-              <img class="card-img-top" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Card image cap">
-              <div class="card-body font-monospace text-center">
+              <img class="card-img" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Card image cap">
+              <div class="card-body font-monospace text-center" >
                 <h5 class="card-title">`+ data[i].name +`</h5>
                 <p class="card-text">`+ data[i].description +`</p>
                 <div class="btn-group" role="group">
@@ -62,22 +62,22 @@ var NoteService = {
 
     update: function(){
       $('.save-note-button').attr('disabled', true);
-      var design = {};
+      var note = {};
 
-      todo.description = $('#description').val();
-      todo.created = $('#created').val();
+      note.description = $('#description').val();
+      note.created = $('#created').val();
 
       $.ajax({
         url: 'rest/notes/'+$('#id').val(),
         type: 'PUT',
-        data: JSON.stringify(todo),
+        data: JSON.stringify(note),
         contentType: "application/json",
         dataType: "json",
         success: function(result) {
             $("#exampleModal").modal("hide");
             $('.save-note-button').attr('disabled', false);
             $("#note-list").html('<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>');
-            DesignService.list(); // perf optimization
+            NoteService.list(); // perf optimization
         }
       });
     },

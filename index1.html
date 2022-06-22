@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Webknack</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+
+<style>
+  body {
+    background-image: url('https://media.discordapp.net/attachments/742391817387114557/965359007260876850/WallpaperDog-17248514.png?width=1202&height=676');
+  }
+</style>
+
+<body>
+  <header>
+
+
+    <nav class="navbar navbar-expand-lg justify-content-center navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-center" href="#">webaesthetic</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown link
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <span class="navbar-text">
+          <a class="navbar-brand" href="https://github.com/mustafaislamovic" target="_blank">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/github-3089487-2567439.png" alt="" width="24" height="24">
+          </a>
+        </span>
+      </div>
+    </nav>
+  </header>
+  
+
+  <!-- IMAGE CARDS MAIN PAGE -->
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://i.ibb.co/6yTg90R/Screenshot-1.png" class="d-block" width="1920" height="880" alt="...">
+        <div class="carousel-caption d-flex flex-column justify-content-center h-100" style="top: 0">
+          <h1>Become visible</h1>
+          <p>Submit your artworks and become featured and rated.</p>
+        <div>
+          <button class="btn btn-outline-secondary font-monospace btn-lg" data-bs-toggle="modal" 
+          data-bs-target="#addNoteModal">Submit your own!</button>
+        </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://i.ibb.co/6yTg90R/Screenshot-1.png" class="d-block" width="1920" height="880" alt="...">
+        <div class="carousel-caption d-flex flex-column justify-content-center h-100" style="top: 0">
+          <h1>slide label</h1>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://i.ibb.co/6yTg90R/Screenshot-1.png" class="d-block" width="1920" height="880" alt="...">
+        <div class="carousel-caption d-flex flex-column justify-content-center h-100" style="top: 0">
+          <h1>slide label</h1>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- IMAGE CARDS MAIN PAGE END -->
+
+
+
+
+    <div class="container marketing" style="margin-top:100px;">
+      <!-- Three columns of text below the carousel -->
+      <div class="text-center" >
+        <div>
+          <button class="btn btn-light align-items-center font-monospace" data-bs-toggle="modal"
+            data-bs-target="#addNoteModal">Submit your own!</button>
+        </div>
+      </div>
+
+      <div id="note-list" class="text-center">
+        <div class="spinner-border" role="status" >
+          <span class="sr-only"></span>
+        </div>
+      </div><!-- /.row -->
+    </div>
+
+
+</body>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="js/note-service.js"></script>
+<script src="js/design-service.js"></script>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input id="id" type="hidden" />
+        <input id="description" type="text" />
+        <input id="created" type="hidden" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary save-design-button" onclick="NoteService.update()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addNoteModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="addNoteForm">
+        <div class="modal-header">
+          <h5 class="modal-title">Note</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Name</label>
+            <input name="name" type="text" class="form-control required" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input name="description" type="text" class="form-control required" placeholder="Enter description">
+          </div>
+          <div class="form-group">
+            <label>Created</label>
+            <input name="created" type="date" class="form-control required" placeholder="Created date">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="designModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Designs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+        <div id="notes-designs" class="list-group">
+          <div class="list-group-item">
+            <button class="btn btn-danger btn-sm float-end">delete</button>
+            <p class="list-group-item-text">kkkkkk</p>
+          </div>
+          <div class="list-group-item">
+            <button class="btn btn-danger btn-sm float-end">delete</button>
+            <p class="list-group-item-text">kkkkkk</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <form id="add-design-form" class="form">
+          <input name="note_id" type="hidden" />
+          <div class="row" style="padding: 20px;">
+            <div class="col-sm-4">
+              <input name="description" type="text" class="form-control required" placeholder="Design">
+            </div>
+            <div class="col-sm-4">
+              <input name="created" type="date" class="form-control required" placeholder="Created">
+            </div>
+            <div class="col-sm-4">
+              <button type="submit" class="btn btn-primary mb-2">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer"> </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  NoteService.init();
+</script>
+
+</html>
